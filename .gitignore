@@ -12,8 +12,8 @@
 *.out
 
 *.DS_Store
-/cmd/gin-admin/gin-admin
-/cmd/gin-admin/data
+/cmd/main/main
+/cmd/main/data
 /release
 /data
 /internal/app/test/data
