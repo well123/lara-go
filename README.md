@@ -1,6 +1,13 @@
 # lara-go
 因为是从laravel转到gin的 :) .  所以对gin-admin进行了一部分优化，增加了一些自定义配置项，只支持前后端分离。仅做学习使用，谨慎用于生产环境。
 
+## 启动
+```air```
+
+```go run main.go server```
+
+## 优化点
+
 - 自定义ShouldBindJSON的错误内容，自定义位置为internal/app/validator/rule.go
   - 注意要使用validator代替binding
     - 自己新增校验的tag和其对应的方法,注意需要strings.ToLower(方法名) = e.Tag()。例如：
