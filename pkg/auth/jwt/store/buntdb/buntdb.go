@@ -15,7 +15,6 @@ type Store struct {
 func NewStore(filePath string) (*Store, error) {
 	if filePath != ":memory:" {
 		_ = os.MkdirAll(filepath.Dir(filePath), 0777)
-		_, _ = os.Create("buntdb.db")
 	}
 
 	db, err := buntdb.Open(filePath)

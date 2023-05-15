@@ -50,11 +50,11 @@ func (cv *CustomValidator) Struct(s any) error {
 	if err != nil {
 		var errMsgs []string
 		for _, e := range err.(validator.ValidationErrors) {
-			fmt.Println(e.Tag())
 			if fn, ok := errorMsg[e.Tag()]; ok {
 				errMsgs = append(errMsgs, fn(e.Field(), e.Param()))
 				continue
 			} else {
+				errMsgs = append(errMsgs, e.Error())
 				if isDebug {
 					panic(fmt.Sprintf("unknown validator tag: %s", e.Tag()))
 				} else {
